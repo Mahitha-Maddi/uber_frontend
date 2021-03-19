@@ -13,7 +13,7 @@ class THome extends Component {
   }; 
   
   componentDidMount() { 
-    fetch("http://localhost:5000/bookings-results")
+    fetch("http://18.211.239.93:5000/bookings-results")
       .then(res => res.json())
       .then(result => {
           //alert(result);
