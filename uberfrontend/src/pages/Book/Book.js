@@ -19,7 +19,7 @@ class Book extends React.Component {
   }
 
   book(item){
-    fetch('http://localhost:5000/book', {
+    fetch('http://18.211.239.93:5000/book', {
       method: 'POST', headers: {
         'Content-Type': 'application/json'
       }, body: JSON.stringify({ source: item.source, destination: item.destination, busnumber: item.busnumber, date: item.date, 
@@ -40,7 +40,7 @@ class Book extends React.Component {
   }
  
   handleSubmit() {
-    fetch('http://localhost:5000/checkAvailability', {
+    fetch('http://18.211.239.93:5000/checkAvailability', {
       method: 'POST', headers: {
         'Content-Type': 'application/json'
       }, body: JSON.stringify({ source: this.state.source, destination: this.state.destination, date: this.state.date })
