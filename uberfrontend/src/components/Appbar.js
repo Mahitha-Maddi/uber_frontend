@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Router, Route, Link } from "react-router-dom";
+import { Router, Route, Link, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import AppBar from '@material-ui/core/AppBar';
@@ -34,7 +34,7 @@ import Home from "../pages/Home";
 //import PasswordChange from "../pages/PasswordChange/PasswordChange";
 import THome from "../pages/Bookings/Home";
 import Book from "../pages/Book/Book";
-import {NotFoundPage} from "../pages/Book";
+import NotFoundPage from "../pages/Book/NotFoundPage";
 
 const drawerWidth = 240;
 const history = createBrowserHistory();
@@ -191,11 +191,11 @@ export default function Dashboard() {
           </Typography>
 
           {/* For kicks */}
-          <IconButton color="inherit">
+          {/* <IconButton color="inherit">
             <Badge badgeContent={2} color="secondary">
               <NotificationsIcon />
             </Badge>
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
       </AppBar>
 
@@ -262,10 +262,12 @@ export default function Dashboard() {
         <main className={classes.content}>
 
           {/* menu paths */}
-          <Route exact path="/" component={Home} />
-          <Route path="/bookings" component={THome} />
-          <Route path="/Book" component={Book} />
-          <Route path="*" exact component={() => <NotFoundPage />} />
+          <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/bookings" exact component={THome} />
+          <Route path="/Book" exact component={Book} />
+          <Route path="*" exact component={NotFoundPage} />
+          </Switch>
         </main>
       </Router>
       
