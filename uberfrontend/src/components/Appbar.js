@@ -34,6 +34,7 @@ import Home from "../pages/Home";
 //import PasswordChange from "../pages/PasswordChange/PasswordChange";
 import THome from "../pages/Bookings/Home";
 import Book from "../pages/Book/Book";
+import {NotFoundPage} from "../pages/Book";
 
 const drawerWidth = 240;
 const history = createBrowserHistory();
@@ -264,7 +265,7 @@ export default function Dashboard() {
           <Route exact path="/" component={Home} />
           <Route path="/bookings" component={THome} />
           <Route path="/Book" component={Book} />
-          {/* <Route path="/activity"><ActivityHome /></Route> */}
+          <Route path="*" exact component={() => <NotFoundPage />} />
         </main>
       </Router>
       
