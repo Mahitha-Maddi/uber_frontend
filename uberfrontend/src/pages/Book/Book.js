@@ -95,7 +95,6 @@ class Book extends React.Component {
               //onKeyUp={this.handleSourceChange.bind(this)}
               variant="outlined"
               margin="normal"
-              required
               id="user"
               label={'UserName'}
               name="user"
@@ -109,7 +108,6 @@ class Book extends React.Component {
               //onKeyUp={this.handleSourceChange.bind(this)}
               variant="outlined"
               margin="normal"
-              required
               id="source"
               label={'Source'}
               name="source"
@@ -123,7 +121,6 @@ class Book extends React.Component {
               //onKeyUp={this.handleDestinationChange.bind(this)}
               variant="outlined"
               margin="normal"
-              required
               id="destination"
               label={'Destination'}
               name="destination"
@@ -137,7 +134,6 @@ class Book extends React.Component {
               //onKeyUp={this.handleDateChange.bind(this)}
               variant="outlined"
               margin="normal"
-              required
               label={'Date of travel'}
               name="date"
             />
