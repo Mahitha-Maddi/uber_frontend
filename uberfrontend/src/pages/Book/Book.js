@@ -46,11 +46,11 @@ class Book extends React.Component {
     let regDate = new RegExp(/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/);
     switch (fieldName) {
       case 'source':
-        sourceValid = (reg.test(value));
+        sourceValid = (value.length === 0 || reg.test(value));
         fieldValidationErrors.source = sourceValid ? '' : ' is invalid or too short';
         break;
       case 'destination':
-        destinationValid = (reg.test(value)) && this.state.source != this.state.destination
+        destinationValid = (value.length === 0 || reg.test(value)) && this.state.source != this.state.destination
         fieldValidationErrors.destination = destinationValid ? '' : ' is too short or invalid';
         break;
       case 'user':
@@ -76,6 +76,7 @@ class Book extends React.Component {
   validateForm() {
     this.setState({ formValid: this.state.sourceValid && this.state.destinationValid && this.state.userValid && this.state.dateValid });
   }
+
 
   errorClass(error) {
     return (error.length === 0 ? '' : 'has-error');
@@ -109,6 +110,7 @@ class Book extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { source, destination, user, date } = this.state;
+    
     fetch('http://18.211.239.93:5000/checkAvailability', {
       method: 'POST', headers: {
         'Content-Type': 'application/json'
@@ -195,7 +197,7 @@ class Book extends React.Component {
                   variant="outlined"
                   margin="normal"
                 /><br /><br /></div>
-              <input type="submit" value="Check Availability" className="btn btn-primary" disabled={!this.state.formValid}
+              <input type="submit" value="Check Availability" className="btn btn-primary"
  onClick={this.handleSubmit.bind(this)} />
             </form>
             <br></br>
