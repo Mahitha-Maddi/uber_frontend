@@ -28,10 +28,6 @@ import LayersIcon from '@material-ui/icons/Layers';
 
 // import your components:
 import Home from "../pages/Home";
-//import SignUp from "../pages/SignUp/SignUp";
-//import SignIn from "../pages/SignIn/SignIn";
-//import PasswordReset from "../pages/PasswordReset/PasswordReset";
-//import PasswordChange from "../pages/PasswordChange/PasswordChange";
 import THome from "../pages/Bookings/Home";
 import Book from "../pages/Book/Book";
 import NotFoundPage from "../pages/Book/NotFoundPage";

@@ -1,5 +1,4 @@
 import { ScrollView, StyleSheet, ActivityIndicator } from "react-native";
-import TweetList from "./TweetList";
 import React, { Component } from "react";
 //import axios from 'axios';
 
@@ -34,7 +33,6 @@ class THome extends Component {
 render(){
   return (
 	  
-	   // <TweetList tweets={this.state.tweets} />
 	  <div>
       <br></br><br></br>
       <br></br><br></br>
