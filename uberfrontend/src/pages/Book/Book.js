@@ -195,7 +195,8 @@ class Book extends React.Component {
                   variant="outlined"
                   margin="normal"
                 /><br /><br /></div>
-              <input type="submit" value="Check Availability" className="btn btn-primary" onClick={this.handleSubmit.bind(this)} />
+              <input type="submit" value="Check Availability" className="btn btn-primary" disabled={!this.state.formValid}
+ onClick={this.handleSubmit.bind(this)} />
             </form>
             <br></br>
             <table border='1'>
