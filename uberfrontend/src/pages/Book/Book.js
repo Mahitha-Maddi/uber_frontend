@@ -46,11 +46,11 @@ class Book extends React.Component {
     let regDate = new RegExp(/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/);
     switch (fieldName) {
       case 'source':
-        sourceValid = (value.length === 0 || reg.test(value));
+        sourceValid = (reg.test(value));
         fieldValidationErrors.source = sourceValid ? '' : ' is invalid or too short';
         break;
       case 'destination':
-        destinationValid = (value.length === 0 || reg.test(value)) && this.state.source != this.state.destination
+        destinationValid = (reg.test(value)) && this.state.source != this.state.destination
         fieldValidationErrors.destination = destinationValid ? '' : ' is too short or invalid';
         break;
       case 'user':
